@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #press-me {
+        display: none;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .h1 {
+        display: none;
+      }
+
+      .btn {
+        font-size: 36px;
+        background-color: #44f;
+        padding: 16px 24px;
+        color: #fff;
+      }
+
+      #press-me:checked ~ .btn {
+        display: none;
+      }
+
+      #press-me:checked ~ .h1 {
+        display: flex;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="press-me" />
+      <label for="press-me" class="btn">Click for surprise!</label>
+      <h1 class="h1">404 Boyfriend Not Found Error <br />💀💀💀</h1>
+    </div>
+  </body>
+</html>
