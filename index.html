@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Document</title>
     <style>
       #press-me {
@@ -16,17 +17,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
       }
 
       .h1 {
         display: none;
+        user-select: none;
       }
 
       .btn {
         font-size: 36px;
-        background-color: #44f;
+        background-color: #88f;
         padding: 16px 24px;
         color: #fff;
+        transition: 200ms;
+      }
+
+      .btn:hover {
+        background-color: #33f;
+        cursor: pointer;
       }
 
       #press-me:checked ~ .btn {
@@ -37,6 +46,55 @@
         display: flex;
         text-align: center;
       }
+
+      .ha {
+        display: none;
+      }
+
+      @keyframes scale-animation {
+        0% {
+          transform: scale(1);
+          color: #af8;
+        }
+        50% {
+          transform: scale(3);
+          color: #37f;
+        }
+        100% {
+          transform: scale(1);
+          color: #a00;
+        }
+      }
+
+      #press-me:checked ~ .ha {
+        display: flex;
+        position: absolute;
+        animation: scale-animation 2s cubic-bezier(0.42, 0, 0.58, 1) infinite
+          alternate;
+        font-size: 48px;
+        font-weight: 800;
+      }
+
+      .ha1 {
+        left: 72px;
+        top: 60px;
+      }
+      .ha2 {
+        left: 180px;
+        top: 280px;
+      }
+      .ha3 {
+        right: 320px;
+        top: 80px;
+      }
+      .ha4 {
+        left: 250px;
+        bottom: 60px;
+      }
+      .ha5 {
+        right: 220px;
+        bottom: 70px;
+      }
     </style>
   </head>
   <body>
@@ -44,6 +102,21 @@
       <input type="checkbox" id="press-me" />
       <label for="press-me" class="btn">Click for surprise!</label>
       <h1 class="h1">404 Boyfriend Not Found Error <br />💀💀💀</h1>
+      <span class="ha ha1">Ha</span>
+      <span class="ha ha2">Ha</span>
+      <span class="ha ha3">Ha</span>
+      <span class="ha ha4">Ha</span>
+      <span class="ha ha5">Ha</span>
     </div>
+    <script type="text/javascript" defer>
+      const btn = document.querySelector(".btn");
+      btn.addEventListener("click", (e) => {
+        console.log(e.target);
+        setTimeout(() => {
+          window.location.href =
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
+        }, 5000);
+      });
+    </script>
   </body>
 </html>
